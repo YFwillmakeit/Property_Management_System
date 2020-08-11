@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>收费项目设置</title>
+		<link rel="stylesheet" type="text/css" href="../css/01chargeItemSetting.css"/>
+		<script type="text/javascript" src="../util/js/jquery-3.5.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="../util/bootstrap-3.3.7-dist/css/bootstrap.css"/>
+		<script type="text/javascript" src="../util/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	</head>
+	<body>
+		<section id="top">
+			<button type="button" class="btn btn-warning" id="add" >新增收费项目</button>
+		</section>
+		<!-- <div id="left">
+			<ul id="menu">
+				<li>
+					<a href="javascript:;">周期性收费项目</a>
+					<ul class="dropdown">
+						<li><a href="javascript:;">水费</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;">临时类收费项目</a>
+					<ul class="dropdown">
+						<li><a href="javascript:;">临时停车</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;">押金类收费项目</a>
+					<ul class="dropdown">
+						<li><a href="javascript:;">代步车</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div> -->
+		<div id="right">
+			<table  cellspacing="" cellpadding="" id="table" class="table table-striped table-hover">
+				<thead>
+				<tr><th>名称</th><th>单价</th><th>计量方式</th><th>收费类型</th><th>收费周期</th><th>操作</th></tr>
+				</thead>
+				<tbody>
+					<!-- <tr>
+						<td>水费</td>
+						<td>4.30</td>
+						<td>用水量</td>
+						<td>周期性收费项目</td>
+						<td>每一月</td>
+						<td><a href="javascript:;">删除</a></td>
+					</tr>
+					<tr>
+						<td>临时停车</td>
+						<td>5.00</td>
+						<td>小时</td>
+						<td>临时类收费项目</td>
+						<td>每一天</td>
+						<td><a href="javascript:;">删除</a></td>
+					</tr>
+					<tr>
+						<td>代步车</td>
+						<td>300</td>
+						<td>每辆</td>
+						<td>押金类收费项目</td>
+						<td>每一周</td>
+						<td><a href="javascript:;">删除</a></td>
+					</tr> -->
+				</tbody>
+				
+			</table>
+			
+			<ul id="pagenum" >
+				<!-- <li class="active">1</li>
+				<li>2</li> -->
+			</ul>
+			
+			
+		</div>
+		<!-- 弹出框1 -->
+		<div id="newproject">
+			<span>新增收费项目</span>
+			<div style="border:#5BC0DE 1px solid;">
+				<div id="newproject_text">
+					<label>名称</label>&nbsp;<input type="text" name="" id="name" value="" />
+				</div>
+				<div id="newproject_radio">
+					<input type="radio" name="choose" id="choose1" value="周期性" /><label>周期性收费项目</label><p></p>
+					<input type="radio" name="choose" id="choose2" value="临时类" /><label>临时类收费项目</label><p></p>
+					<input type="radio" name="choose" id="choose3" value="押金类" /><label>押金类收费项目</label><p></p>
+				</div>
+				<div id="newproject_btn">
+					<button type="button" id="" class="btn btn-info">确定</button>
+					<button type="button" class="btn btn-danger">取消</button>
+				</div>
+			</div>
+		</div>
+	<!-- 弹出框2 -->
+		<div id="newproject_s">
+			<span>添加收费标准</span>
+			<div style="border:#5BC0DE 1px solid;">
+				<p><span>收费项目名称&nbsp;</span><b><i><lable class='name'></lable></i></b></p>
+				<!-- <p>金额计算方式<input type="radio" name="method" id="" value="" />单价x数量</p>
+				<p><input type="radio" name="method" id="" value="" />每户单独输入</p>
+				<p>指定金额&nbsp;<input type="text" name="" id="" value="" class="in"/></p> -->
+				<p>单价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="price" value="" class="in"/></p>
+				<p>计量方式&nbsp;<input type="text" name="" id="counttype" value="" class="in" /></p>
+				<p>收费周期<span>每隔&nbsp;<input type="number"  max="12" min="1" id="round" value="" />&nbsp;月计费一次</span></p>
+				<div id="newproject_s_btn">
+					<button type="button" id="" class="btn btn-info">确定</button>
+					<button type="button" class="btn btn-danger">取消</button>
+				</div>
+			</div>
+		</div>
+
+		<!--修改框-->
+
+		<div id="updateBox">
+			<div id="update_radio">
+				<input type="radio" name="upchoose" id="upchoose1" value="周期性" /><label>周期性收费项目</label>
+				<p></p>
+				<input type="radio" name="upchoose" id="upchoose2" value="临时类" /><label>临时类收费项目</label>
+				<p></p>
+				<input type="radio" name="upchoose" id="upchoose3" value="押金类" /><label>押金类收费项目</label>
+				<p></p>
+			</div>
+			<p>单价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="upprice" value="" class="in" /></p>
+			<p>计量方式&nbsp;<input type="text" name="" id="upcounttype" value="" class="in" /></p>
+			<p>收费周期<span>每隔&nbsp;<input type="number" max="12" min="1" id="upround" value="" />&nbsp;月计费一次</span></p>
+			<div id="updateBox_btn">
+				<button type="button" id="" class="btn btn-info">确定</button>
+				<button type="button" class="btn btn-danger">取消</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/01chargeItemSetting.js"></script>
+	  <!--<script type="text/javascript">
+			var tmepPros=[{name:'水费',
+					   price:4.30,
+					   type:'用水量',
+					   pricetype:'周期性',
+					   pricetime:'每1月'
+						},
+						{name:'临时停车',
+						price:5,
+						type:'小时',
+						pricetype:'周期性',
+						pricetime:'每1月'
+						},
+						{name:'代步车',
+						 price:500,
+						type:'用水量',
+						pricetype:'周期性',
+						pricetime:'每1月'
+						},
+						{name:'天然气',
+						 price:4.30,
+						type:'每立方',
+						pricetype:'周期性',
+						pricetime:'每1月'
+						},
+						{name:'公摊费',
+						 price:50,
+						type:'每平方',
+						pricetype:'周期性',
+						pricetime:'每1月'
+						},
+						{name:'饮用水',
+						 price:3,
+						type:'每吨',
+						pricetype:'周期性',
+						pricetime:'每1月'
+						},
+						{name:'楼道清洁',
+						 price:20,
+						type:'楼层',
+						pricetype:'周期性',
+						pricetime:'每6月'
+						},
+						{name:'保护费',
+						 price:500,
+						type:'每人',
+						pricetype:'周期性',
+						pricetime:'每1月'
+						}
+						];
+			var price,name,pricetype,counttype,round,tr=$("<tr></tr>");
+			 if(localStorage.getItem('pros')=='null'){ // 初始化一次数据
+				 localStorage.setItem('pros',JSON.stringify(tmepPros));
+			 }
+			
+		
+			var pros = JSON.parse(localStorage.getItem('pros'));
+	//初始化把数组对象上传到本地存储；
+					localStorage.pros=JSON.stringify(pros);
+						var pageData=[];
+					initTable();
+				function initTable(){//进入页面的初始状态，初始化表格
+						     //默认获取第一页的数据
+						       getPageData(pros,1,5);
+						//       渲染页面数据
+						        render(pageData);
+						        //        渲染分页
+						        getPage(pros.length,5);
+						    }
+				function render(pros){
+						var tr='';
+				for(let i=0;i<pros.length;i++){
+					var td1='<td>'+pros[i].name+'</td>',
+						td2='<td>'+pros[i].price+'</td>,'
+						td3='<td>'+pros[i].type+'</td>',
+						td4='<td>'+pros[i].pricetype+'</td>',
+						td5='<td>'+pros[i].pricetime+'</td>',
+						td6="<td><a href='javascript:;'>删除</a></td>";
+						tr+='<tr>'+td1+td2+td3+td4+td5+td6+'</tr>';
+						$('tbody').html(tr);
+						// console.log(tr);
+				}
+				del();
+				}
+				function getPage(total,numPerPage){//
+				        var pageNum = Math.ceil(total/numPerPage);
+				        var lis='';
+				        for(let i=1;i<=pageNum;i++){
+				            if(i == 1){
+				                lis += '<li class="active">'+i+'</li>'
+				            }else{
+				                lis += '<li>'+i+'</li>'
+				            }
+				        }
+				        $('#pagenum').html(lis);
+				    }
+				    function getPageData(arr,index,numPerPage){
+				        //1  0*numPerPage ~  numPerPage-1
+				        //2  numPerPage ~  2numPerPage-1
+				        //3  2numPerPage ~  3numPerPage-1
+				        pageData = arr.slice((index-1)*numPerPage, index * numPerPage)
+				    }
+				//分页点击部分
+				 // 对于新创建的分页节点，没法点击进行分页
+				   // $('#pagenum').find('li').click(function(){
+				   //   //        console.log($(this).index());
+				   //   getPageData(pros,$(this).index()+1,5);
+				   //   render(pageData);
+				   //   $(this).addClass('active').siblings('li').removeClass('active');
+				   //   });
+				    
+				    $('#pagenum').on('click','li',function(){
+				        getPageData(pros,Number($(this).html()),5);
+				        render(pageData);
+				        $(this).addClass('active').siblings('li').removeClass('active');
+				    });
+					
+					// $('#pagenum li').click(function(){
+					// 	 $(this).addClass('active').siblings('li').removeClass('active');
+					// })
+					
+					
+					$('tbody').on('click','.delBtn',function(){
+					//        console.log(this)
+					       //在数组中删除数据
+					        pros.splice($(this).data('index'),1);
+					        //渲染页面。渲染分页
+					        initTable();
+					    })
+		//新增收费项目按钮,第一个弹出框
+		
+			
+			$('#add').click(function(){
+				$('#newproject').css('display','block');
+			})
+		$($('#newproject_btn button')[0]).click(function(){
+			var nameCheck=[];
+			for(let i=0;i<pros.length;i++){
+				nameCheck[i]=pros[i].name;
+				console.log(nameCheck);
+				console.log(nameCheck.indexOf($('#name').val()));
+			}
+			if($('#name').val()==''|| !($('#choose1').prop('checked')||$('#choose2').prop('checked')||$('#choose3').prop('checked'))){
+				// console.log('a');
+				alert('有内容没填，请完善');
+			}
+			else if(nameCheck.indexOf($('#name').val())!=-1){
+				alert('该项目已存在')
+			}
+			else{
+			$('#newproject').css('display','none');
+			$('#newproject_s').css('display','block');
+			$('#newproject_s .name').text($('#newproject #name').val())//新的名称取出来到第二个弹出框
+			// price = $('#newproject_s #price').val();
+			name=$('#newproject #name').val();
+			pricetype=$('#newproject_radio input[name=choose]:checked').val();
+			$(':text').val('');//清空值
+			$("input[name='choose']").prop('checked',false);
+			}
+		})
+		
+		
+		$($('#newproject_btn button')[1]).click(function(){
+			$('#newproject').css('display','none');
+			$(':text').val('');
+			$("input[name='choose']").prop('checked',false);
+		})
+		
+		//第二个弹出框
+		
+		//第二个弹出框确定按钮功能
+		$($('#newproject_s_btn button')[0]).click(function(){
+			var tr=$("<tr></tr>");
+			 if($('#price').val()==''||$('#counttype').val()==''||$('#round').val()==''){
+			 	alert('请完善信息');
+			 }
+			 else{
+			$('#newproject_s').css('display','none');
+			price=$('#newproject_s #price').val();//获取输入框价格
+			type=$('#newproject_s #counttype').val();//获取计量类型
+			pricetime='每'+$('#newproject_s #round').val()+'月';//获取收费周期
+			
+			$("input[name='method']").prop('checked',false);
+		//向表格中添加数据
+		tr.html("<td>"+name+"</td><td>"+price+"</td>"+"<td>"+type+"</td><td>"+pricetype+"</td><td>"+pricetime+"</td>"+"<td><a href='javascript:;'>删除</a></td>");
+		    $("table").append(tr);
+			
+		//将新添加的项目加入到数组对象pros中
+			pros.unshift({name,price,type,pricetype,pricetime});
+		//将最新的数组对象加入到本地存储
+			localStorage.pros=JSON.stringify(pros);
+			initTable();
+			//表格删除功能
+			// $('table a').click(function(){
+			// 	if(confirm('确定删除吗？')){
+			// 	$(this).parent().parent().remove();
+			// 	var delName = $(this).parent().parent()[0].children[0].innerText;
+			// 	for(let i=0;i<pros.length;i++){
+			// 			console.log(pros[i].name);
+			// 			if(pros[i].name==delName){
+			// 				pros.splice(i,1);
+			// 				console.log(pros);
+			// 			}
+			// 	//删除后更新本地存储
+			// 				localStorage.pros=JSON.stringify(pros);
+			// 		}
+			// 	// console.log('删了')
+			// 	}
+			// })
+			
+			}
+		})
+		// console.log(price);
+		// console.log(name);
+		//第二个弹出窗取消按钮功能
+		$($('#newproject_s_btn button')[1]).click(function(){
+			$('#newproject_s').css('display','none');
+			$("input[name='method']").prop('checked',false);
+		})
+		// 下拉菜单
+		// $('#menu a').click(function(){
+		//     $(this).next().toggle().parent('li').siblings('li').find('ul').hide();
+		// 	})
+		
+		function del(){ 
+			$('table a').click(function(){
+			if(confirm('确定删除吗？')){
+			
+			$(this).parent().parent().remove();
+			var delName = $(this).parent().parent()[0].children[0].innerText;
+			console.log('删了');
+			//获取删除节点的name
+			var delName = $(this).parent().parent()[0].children[0].innerText;
+			//遍历数组对象把name相同的删掉
+			for(let i=0;i<pros.length;i++){
+				console.log(pros[i].name);
+				if(pros[i].name==delName){
+					pros.splice(i,1);
+					console.log(pros);
+				}
+		//删除后更新本地存储
+					localStorage.pros=JSON.stringify(pros);
+			}
+			}
+			 initTable();//有问题使用了这个后没法一直删
+		})
+		}
+		
+		
+		
+		</script>
+		-->
+	</body>
+</html>

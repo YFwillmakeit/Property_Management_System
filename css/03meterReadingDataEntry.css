@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,body{   
+    height: 100%;
+    width: 100%;
+}
+.left{
+    padding-top: 50px;
+    background-color: rgb(185, 205, 229);
+    width: 15%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+.month{
+    font-size: 20px;
+    color: gray;
+    padding-left: 3px;
+    
+}
+.monht-ul{
+    display: inline-block;
+    overflow: hidden;
+}
+.floor{
+    display: none;
+}
+#data-info{
+    width: 100%;
+}
+#right{
+    float: right;
+    width: 85%;
+    position: relative;
+    height: 100%;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    padding: 20px;
+    line-height: 3.428571
+  }
+
+.pagination {
+    position:fixed;
+    margin-left: 500px;
+    top: 600px;
+}
+.pagination>li>a, .pagination>li>span {
+    padding: 18px 24px;
+    font-size: 14px;
+  }
+input{
+    width: 80px;
+}
+
+.pagination {
+    position: fixed;
+    top: 550px;
+  }

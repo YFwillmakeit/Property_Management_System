@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>报修投诉</title>
+  <script src="../util/js/jquery-3.5.1.js"></script>
+  <script src="../util/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="../util/bootstrap-3.3.7-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../css/06warrantyComplaint.css">
+</head>
+<body>
+  <table class="table table-striped" id="repair-info">
+        <th><!-- 表头 -->                  
+            <td>类型</td>
+            <td>业主</td>
+            <td>时间</td>
+            <td>状态</td>
+            <td>操作</td>
+        </th>
+        <tbody id="t1">
+
+        </tbody>
+</table>
+<nav aria-label="Page navigation" id="oPagination">
+    <ul class="pagination" id="pageBox">
+      <!-- <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li> -->
+    </ul>
+  </nav>
+<!-- <ul id="pageBox"></ul> -->
+<div class="repair-alert" id="repair-alert"> <!-- 弹出框1 -->
+<p>报修投诉</p>
+<div class="alert-info1">
+    <p>
+        <span></span>
+        <span></span>
+    </p>
+    <p>
+        <span></span>
+        <span></span>
+    </p>
+    <p>
+        <span></span>
+    </p>
+    <p>
+        <span></span>
+    </p>
+    <p>
+        图片：
+        <img src="../images/1.png" alt="">
+        <img src="../images/2.png" alt="">
+    </p>
+    <p>
+        <button>受理</button>
+        <button>关闭</button>
+    </p>
+</div>
+</div>
+<div id="repair-worker">   <!-- 维修人员弹出框 -->
+    报修任务分配
+    <div>
+        <span>维修人员：</span> 
+        <select name="worker" id="worker">
+            <option value="1">张三</option>
+            <option value="2">李四</option>
+            <option value="3">王麻子</option>
+            <option value="4">giao哥</option>
+            <option value="5">药酱</option>
+            <option value="6">保安</option>
+        </select>
+        <span>手机号</span> 
+        <input type="tel" id="worker-tel">
+        <p>
+            <button>确定</button>
+            <button>取消</button>
+        </p>       
+    </div>
+</div>
+<script src="../js/06warrantyComplaint.js"></script>
+</body>
+</html>

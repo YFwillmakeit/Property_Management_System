@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>物业后台管理系统</title>
+  <script src="util/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./util/bootstrap/css/bootstrap.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      list-style: none;
+    }
+html{
+  background-image: url(images/bg8.jpg);
+  background-repeat: no-repeat;
+  background-size:100%;
+}
+    html,body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-color: #D5EFFE;
+    }
+    body{
+      opacity: 0.8;
+      
+    }
+    #left {
+      float: left;
+      width: 250px;
+      height: 100%;
+      background:rgb(51,122,183);
+      font-size: 20px;
+    }
+    #right {
+      height: 100%;
+      /* background: #2b1b85; */
+      margin-left: 250px;
+     }
+    #nav {
+      padding-left: 50px;
+      margin-top: 50px;
+    }
+    a{
+      color: white;
+    }
+    #nav li{
+      margin-top: 10px;
+    }
+    #nav li:hover{
+      background-color:#D5EFFE;
+    }
+    a:hover {
+      cursor: pointer;
+      color: black;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+    header {  
+      height: 40PX;
+      margin-top: 0;
+
+    }
+  </style>
+</head>
+<body>
+  <!-- <header>
+    <h2>物业后台管理系统</h2>
+  </header> -->
+  <div id="left">
+    <ul id="nav">
+      <li><a href="pages/01chargeItemSetting.html" target="1">收费项目设置</a></li>
+      <li><a href="pages/02customerDataEntry.html" target="1">客户资料录入</a></li>
+      <li><a href="pages/03meterReadingDataEntry.html" target="1">抄表数据录入</a></li>
+      <li><a href="pages/04customerPayment.html" target="1">客户缴费</a></li>
+      <li><a href="pages/05propertyNotice.html" target="1">物业通知</a></li>
+      <li><a href="pages/06warrantyComplaint.html" target="1">保修投诉</a></li>
+      <li><a href="pages/07personnelManagement.html" data-quanxian="2"  target="1">人员管理</a></li>
+      <!-- <li><a href="pages/08departmentManagement.html" data-quanxian="2"  target="1">部门管理</a></li> -->
+    </ul>
+  </div>
+  <div id="right">
+    <iframe name="1" src="pages/03meterReadingDataEntry.html" frameborder="0"></iframe>
+  </div>
+  <script>
+     $('#rigth').load('./pages/01chargeItemSetting.html')
+    $('#nav a').click(function(){
+      if($(this).data('src')){
+        $('#right').load($(this).data('src'))
+      }
+    //   // else{
+    //   //   $(this).next()
+    //   // }
+    })
+    var privacy=location.hash.substr(1);
+    switch(privacy){
+    case '':
+    location.href='./pages/login.HTML';
+    break;
+    case '1':
+    $('[data-quanxian="2"]').hide();
+    break;
+    case '2':
+    break;
+    defaule:
+    console.log('没有权限数据');
+    break;
+  }
+  </script>
+</body>
+</html>

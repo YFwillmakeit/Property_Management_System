@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>抄表数据录入</title>
+  <script src="../util/js/jquery-3.5.1.js"></script>
+  <script src="../util/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="../util/bootstrap-3.3.7-dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="../font/02customerDataEntry/iconfont.css" />
+  <link rel="stylesheet" href="../css/03meterReadingDataEntry.css">
+  
+</head>
+
+<body>
+  <div class="left">
+    <ul class="month-ul">
+      <li>
+        <span class="iconfont">&#xe64f;</span>
+        <a class="month" href="javascript:;"> 一月</a>
+        <ul class="floor">
+          <li>1F</li>
+          <li>2F</li>
+          <li>3F</li>
+          <li>4F</li>
+          <li>5F</li>
+          <li>6F</li>
+        </ul>
+      </li>
+      <li>
+        <span class="iconfont">&#xe64f;</span>
+        <a href="javascript:;" class="month"> 二月</a>
+        <ul class="floor">
+          <li>1F</li>
+          <li>2F</li>
+          <li>3F</li>
+          <li>4F</li>
+          <li>5F</li>
+          <li>6F</li>
+        </ul>
+      </li>
+      <li>
+        <span class="iconfont">&#xe64f;</span>
+        <a href="javascript:;" class="month"> 三月</a>
+        <ul class="floor">
+          <li>1F</li>
+          <li>2F</li>
+          <li>3F</li>
+          <li>4F</li>
+          <li>5F</li>
+          <li>6F</li>
+        </ul>
+
+      </li>
+      <li>
+        <span class="iconfont">&#xe64f;</span>
+        <a href="javascript:;" class="month"> 四月</a>
+        <ul class="floor">
+          <li>1F</li>
+          <li>2F</li>
+          <li>3F</li>
+          <li>4F</li>
+          <li>5F</li>
+          <li>6F</li>
+        </ul>
+      </li>
+      <li>
+        <span class="iconfont">&#xe64f;</span>
+        <a href="javascript:;" class="month"> 五月</a>
+        <ul class="floor">
+          <li>1F</li>
+          <li>2F</li>
+          <li>3F</li>
+          <li>4F</li>
+          <li>5F</li>
+          <li>6F</li>
+        </ul>
+      </li>
+      <li>
+        <span class="iconfont">&#xe64f;</span>
+        <a href="javascript:;" class="month"> 六月</a>
+        <ul class="floor">
+          <li>1F</li>
+          <li>2F</li>
+          <li>3F</li>
+          <li>4F</li>
+          <li>5F</li>
+          <li>6F</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div id="right">
+    <table id="data-info" class="table">
+      <thead>
+        <tr>
+          <th>客户编号</th>
+          <th>抄表项目</th>
+          <th>起码</th>
+          <th>止码</th>
+          <th>倍率</th>
+          <th>损耗</th>
+          <th>操作</th>
+          <th>备注</th>
+        </tr>
+      </thead>
+      <tbody id="content">
+  
+      </tbody>
+      <tfoot id="table-foot">
+        <tr>
+          <td><a href="javascript:;" id="data-info-add">+添加</a></td>
+        </tr>
+      </tfoot>
+    </table>
+    <nav aria-label="Page navigation" id="oPagination">
+      <ul class="pagination" id="pageBox">
+       
+      </ul>
+    </nav>
+  </div>
+
+  <script src='../js/03meterReadingDataEntry.js'></script>
+</body>
+
+</html>

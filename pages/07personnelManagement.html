@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>人员管理</title>
+  <link rel="stylesheet" href="../util/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/07personnelManagement.css">
+  <script src="../util/jquery-3.4.1.min.js"></script>
+  <script src="../util/bootstrap/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="oTop">名字</th>
+        <th class="oTop">性别</th>
+        <th class="oTop">职务</th>
+        <th class="oTop">部门名</th>
+        <th class="oTop">电话号码</th>
+        <th>操作<button type="button" class="btn btn-success" id="add-person">+新增人员</button></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>李四</td>
+        <td>女</td>
+        <td>清洁工</td>
+        <td>生活部</td>
+        <td>12626261311</td>
+        <td>
+          <button type="button" class="btn btn-info modify-person">修改信息</button>
+          <button type="button" class="btn btn-danger delete-person">删除信息</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation" id="oPagination">
+    <ul class="pagination">
+      <!--<li><a href="#">1</a></li>-->
+      <!--<li><a href="#">2</a></li>-->
+      <!--<li><a href="#">3</a></li>-->
+      <!--<li><a href="#">4</a></li>-->
+      <!--<li><a href="#">5</a></li>-->
+    </ul>
+  </nav>
+
+  <div id="add-mask">
+    <form class="form-inline">
+      <div class="form-group w-input">
+        <label for="exampleInputName1">名字</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" class="form-control" id="exampleInputName1" placeholder="名字">
+      </div><br>
+      <div class="form-group w-input">
+        <label for="exampleInputName2">性别</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" class="form-control" id="exampleInputName2" placeholder="性别">
+      </div><br>
+      <div class="form-group w-input">
+        <label for="exampleInputName3">职务</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" class="form-control" id="exampleInputName3" placeholder="职务">
+      </div><br>
+      <div class="form-group w-input">
+        <label for="exampleInputName4">部门名</label>&nbsp&nbsp&nbsp
+        <input type="text" class="form-control" id="exampleInputName4" placeholder="部门名">
+      </div><br>
+      <div class="form-group w-input">
+        <label for="exampleInputName5">电话号码</label>
+        <input type="text" class="form-control" id="exampleInputName5" placeholder="电话号码">
+      </div><br>
+    </form>
+    <div id="add-button-wrap">
+      <button type="button" class="btn btn-primary" id="add-determine">确定</button><button type="button" class="btn btn-default" id="add-cancel">取消</button>
+    </div>
+  </div>
+
+  <div id="modify-mask">
+    <form class="form-inline">
+      <div class="form-group w-input">
+        <label for="exampleInputName6">名字</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" class="form-control" id="exampleInputName6" placeholder="名字" disabled>
+      </div><br>
+      <div class="form-group w-input">
+        <label for="exampleInputName7">性别</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" class="form-control" id="exampleInputName7" placeholder="性别" disabled>
+      </div><br>
+      <div class="form-group w-input">
+        <label for="exampleInputName8">职务</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="text" class="form-control" id="exampleInputName8" placeholder="职务">
+      </div><br>
+      <div class="form-group w-input">
+        <label for="exampleInputName9">部门名</label>&nbsp&nbsp&nbsp
+        <input type="text" class="form-control" id="exampleInputName9" placeholder="部门名">
+      </div><br>
+      <div class="form-group w-input">
+        <label for="exampleInputName10">电话号码</label>
+        <input type="text" class="form-control" id="exampleInputName10" placeholder="电话号码">
+      </div><br>
+    </form>
+    <div id="modify-button-wrap">
+      <button type="button" class="btn btn-primary" id="modify-determine">确定</button><button type="button" class="btn btn-default" id="modify-cancel">取消</button>
+    </div>
+  </div>
+
+  <div id="delete-mask">
+    <P>是否删除该条信息？</P>
+    <div id="delete-button-wrap">
+      <button type="button" class="btn btn-primary" id="delete-determine">确定</button><button type="button" class="btn btn-default" id="delete-cancel">取消</button>
+    </div>
+  </div>
+
+</body>
+<script src="../js/07personnelManagement.js"></script>
+</html>
+

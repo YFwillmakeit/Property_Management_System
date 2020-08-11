@@ -1,0 +1,131 @@
+#repair-info{
+    width: 100%;
+    text-align: center;
+}
+#repair-info td{
+    line-height: 30px;
+    border: none;
+}
+/* #repair-info td:last-child{
+    padding-right: 550px;
+} */
+tr>td:nth-child(2) a{
+    color: #00a2ff;
+}
+tr>td:last-child a{
+    color: red;
+}
+.repair-alert{
+    display: none;
+    width: 800px;
+    height: 430px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 7px;
+    background-color: #D5EFFE;
+    border-radius: 5px;
+}
+.alert-info1{
+    padding: 20px;
+    background-color: white;
+    height: 380px;
+    border: 1px gray solid;
+    border-radius: 5px;
+    position: relative;
+}
+.repair-alert p:not(:first-child){
+    line-height: 30px;
+}
+.alert-info1 p:first-child span,.alert-info1 p:nth-child(2) span{
+    display: inline-block;
+    width: 200px;
+    color: rgb(165, 162, 162);
+}
+.alert-info1 p:last-child{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.alert-info1 img{
+    width: 200px;
+    margin-left: 10px;
+    vertical-align: top;
+}
+.alert-info1 button{
+    background-color: rgb(100,170,255);
+    color: white;
+    border: none;
+    width: 80px;
+    border-radius: 5px;
+    margin-right: 10px;
+
+}
+#repair-worker{
+    display: none;
+    height: 290px;
+    width: 500px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 7px;
+    background-color: #D5EFFE;
+    border-radius: 5px;
+    border-radius: 5px;
+}
+#repair-worker>div{
+    width: 486px;
+    height: 240px;
+    margin-top: 15px;
+    background-color: white;
+    border: 1px gray solid;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 80px;
+}
+#repair-worker>div>select,#repair-worker>div>input{
+    border: 1px rgb(100,170,255) solid ;
+    border-radius: 5px;
+    height: 20px;
+}
+#repair-worker>div>p{
+    margin-top: 90px;
+    text-align: right;
+}
+#repair-worker>div>p button:first-of-type{
+    width: 50px;
+    background-color: rgb(100,170,255);
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+#repair-worker>div>p button:last-of-type{
+    width: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: orangered;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    padding: 20px;
+    line-height: 3.428571
+  }
+
+.pagination {
+    position:fixed;
+    margin-left: 500px;
+    top: 550px;
+}
+.pagination>li>a, .pagination>li>span {
+    padding: 18px 24px;
+    font-size: 14px;
+  }

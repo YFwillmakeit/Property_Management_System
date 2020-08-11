@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#wai{
+    /* width: 100%; */
+    /* border: 15px #D5EFFE solid; */
+    height: 720px;
+    position: relative;
+}
+#table{
+    width: 100%;
+    text-align: center;
+    border: none;
+    
+    
+}
+#table td{
+    border: none;
+    text-align: center;
+    line-height: 50px;
+}
+#table th{
+    text-align: center ;
+    border-bottom: 1px rgb(168,203,212) solid;
+    line-height: 50px;
+}
+a:hover{
+    cursor: pointer;
+}
+tr{
+    text-align: center;
+}
+#tianjia{
+    padding-left: 20px;
+    color: cornflowerblue;
+}
+#table a:last-child{
+    color: red;
+}
+#neirong2,#neirong3{
+    height: 150px;
+    width: 600px;
+    vertical-align: top;
+}
+#jia,#gai{
+    border: 3px #D5EFFE solid;
+    width: 710px;
+    height: 410px;
+    border-radius: 5px;
+    position: absolute;
+    left: 25%;
+    top:60px;
+    background-color:#D5EFFE;
+    display: none;
+
+    
+    
+}
+#jia h4,#gai h4{
+    color: rgb(9, 66, 170);
+    margin-left: 5px;
+}
+#jia>div,#gai>div{
+    border: 1px rgb(190,187,183) solid;
+    border-radius: 5px;
+    background-color: white;
+    width: 685px;
+    height: 350px;
+    padding-left: 20px;
+    padding-top: 5px;
+    margin: 0 auto;
+}
+#jia input,#gai input,select,#neirong2,#neirong3{
+    border:1px rgb(168,203,212) solid;
+    border-radius: 5px;
+    outline: none;
+}
+
+#but{
+    margin-left: 450px;
+    margin-top: 50px;
+    color: white;
+}
+#but :first-of-type{
+    width: 80px;
+    height: 30px;
+    margin-right: 20px;
+    background-color:rgb(59,170,255);
+    border-style: none;
+    border-radius: 5px;
+}
+#but :last-of-type{
+    width: 80px;
+    height: 30px;
+    background-color: red;
+    border-style: none;
+    border-radius: 5px;
+}
+#neirong a{
+    margin-left: 10px;
+}
+button{
+    width: 30px;
+    height: 40px;
+    border: none;
+    background-color: white;
+    outline: none;
+}
+#pageBox{
+/* overflow: hidden; */
+width: 200px;
+/* height: 300px; */
+margin: auto;
+bottom: 50%;
+left:40%;
+position: fixed;
+top: 750px;
+
+}
+#pageBox>li{
+height: 50px;
+width: 50px;
+float: left;
+border:  #DDDDDD 1px solid;
+line-height: 50px;
+color: #337ab7;
+text-align: center;
+}
+
+#pageBox .active{
+background-color:rgb(51,122,183);
+color: #23527c;
+border: #DDDDDD 0.8px solid;
+}
+#pageBox>li:hover{
+cursor: pointer;
+background-color: #EEEEEE;
+color: #23527c;
+border: none;
+}
+#pageBox>.active:hover{
+background-color:rgb(51,122,183);
+}
+
+/* .pagination {
+    width: 400px;
+    height: 60px;
+    margin-left: 340px;
+
+  }
+  
+  .pagination>li>a, .pagination>li>span {
+    padding: 18px 24px;
+    font-size: 14px;
+  }
+  
+  #oPagination {
+    position: fixed;
+    top: 550px ;
+  } */

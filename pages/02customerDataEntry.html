@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>客户资料录入</title>
+    <script src="../util/jquery-3.4.1.min.js"></script>
+    <script src="../util/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../util/bootstrap-3.3.7-dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../font/02customerDataEntry/iconfont.css"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        html,body{
+            background-color: rgb(185, 205, 229);
+            height: 100%;
+            min-width:1200px;
+        }
+
+        a{
+            text-decoration: none;
+            color: #0077aa;
+        }
+       a:hover{
+           text-decoration: none;
+       }
+        header>ul{
+            overflow: hidden;
+            margin: 10px 20px 10px 200px ;
+            display: inline-block;
+        }
+        header li{
+            width: 120px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 5px 10px;
+            margin-right: 20px;
+            float: left;
+        }
+        header li>span{
+            color: orange;
+        }
+        header>div{
+            float: right;
+            margin: 10px 20px 10px 200px ;
+
+        }
+        header>div>span{
+            color:gray;
+            font-size: 16px;
+        }
+        header input{
+            border-radius: 8px;
+            width: 200px;
+            height: 30px;
+            border: none;
+        }
+        #hr{
+            width: 98%;
+            height: 1px;
+            background-color: grey;
+            margin: 0 auto;
+        }
+
+
+        /*  头部结束   */
+
+        section{
+            height: 92%;
+
+        }
+        .left{
+            width: 200px;
+            height: 100%;
+            float: left;
+        }
+        .right{
+            margin: 10px 0 0 200px;
+            height: 100%;
+            background-color: white;
+            position: relative;
+        }
+        .north{
+            margin-top: 20px;
+        }
+        .north li{
+            width: 200px;
+            text-align: center;
+        }
+        .room{
+            display: none;
+            font-size: 14px;
+            color: grey;
+            background-color: #e3fdff;
+        }
+        .floor{
+            display: none;
+        }
+        .north>li{
+            padding: 10px 0;
+            font-size: 18px;
+        }
+        .north>li>a{
+            color: gray;
+        }
+        #headerOne{
+            margin-left: 20px;
+            text-align: center;
+
+        }
+        #headerOne th{
+            text-align:center ;
+            width: 150px;
+            padding: 5px;
+            border-bottom: gray solid 1px;
+        }
+        #headerOne td{
+            padding: 20px;
+        }
+        .box,.box1{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.2);
+            position: absolute;
+        }
+        .smallBox{
+            width: 69%;
+            height:300px;
+            background-color: #D5EFFE;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 15px;
+            padding: 5px;
+        }
+        .smallBox>div:first-child{
+            margin: 5px 0;
+        }
+        #threeBox>div{
+            background-color: white;
+            border-radius: 8px;
+        }
+        .contentBox>div{
+            border-bottom:blue solid 1px ;
+        }
+        .contentBox>div:nth-child(2){
+            display: inline-block;
+        }
+        #bigBox,#bigBox1{
+            width: 100%;
+            background-color:rgba(255,255,255,0.5);
+
+        }
+        #bigBox td{
+            width: 33%;
+            text-align: right;
+            padding: 5px;
+        }
+        #bigBox select,input{
+            width: 140px;
+            height: 30px;
+            border-radius: 8px;
+            border: rgb(213,239,254) solid 2px;
+        }
+        #bigBox1 td{
+            width: 33%;
+            text-align: right;
+            padding: 5px;
+        }
+        #bigBox1 select,input{
+            width: 140px;
+            height: 30px;
+            border-radius: 8px;
+            border: rgb(213,239,254) solid 2px;
+        }
+        #anniu,#anniu1{
+            width:100%;
+            height: 30px;
+            text-align: right;
+            /* position: absolute;
+            bottom: 0; */
+        }
+        #anniu>button,#anniu1>button{
+            width: 50px;
+            height: 30px;
+            background-color: white;
+            /* margin: 60px 10px 0 0; */
+            margin-top: 10px;
+            border: none;
+            border-radius: 8px;
+        }
+        .shoufei{
+            background-color: white;
+            width: 100%;
+        }
+        .shoufei th{
+            padding:  0 10px;
+        }
+        .box{
+            display:none ;
+
+        }
+        td>a:last-child{
+            color: red;
+        }
+        tbody>tr{
+            height: 60px;
+        }
+        /*=========================*/
+        /* #pageBox li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        #pageBox li:hover{
+            cursor: pointer;
+            background-color: gray;
+        }
+        #pageBox .active{
+            background-color: #0077aa;
+        } */
+        .box1{
+            display: none;
+        }
+        .left li:hover{
+            cursor: pointer;
+        }
+    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    padding: 20px !important;
+    line-height: 3.428571
+  }
+
+.pagination {
+    position:fixed;
+    margin-left: 500px;
+    top: 600px;
+}
+.pagination>li>a, .pagination>li>span {
+    padding: 18px 24px;
+    font-size: 14px;
+  }
+
+    </style>
+</head>
+<body>
+    <header>
+        <ul>
+            <li>
+                <span class="glyphicon glyphicon-star glyphicon " aria-hidden="true"></span>
+                <a href="javascript:;" class="tou"> 新增用户</a>
+            </li>
+        </ul>
+        <div>
+            <input  placeholder="x-x-x(客户编号)" type="text" id="search"/>
+            <span class="glyphicon glyphicon-search" aria-hidden="true" id="run"></span>
+        </div>
+
+    </header>
+    <div id="hr"></div>
+    <section>
+        <div class="left">
+            <ul class="north">
+                <li>
+                    <span class="iconfont">&#xe64f;</span>
+                    <a class="dong" href="javascript:;"> 一号楼</a>
+                    <ul class="floor">
+                     <!--   <li>1F</li>
+                        <li>2F</li>
+                        <li>3F</li>
+                        <li>4F</li>
+                        <li>5F</li>
+                        <li>6F</li>-->
+                    </ul>
+                </li>
+                <li>
+                    <span class="iconfont">&#xe64f;</span>
+                    <a href="javascript:;" class="dong"> 二号楼</a>
+                    <ul class="floor">
+                     <!--   <li>1F</li>
+                        <li>2F</li>
+                        <li>3F</li>
+                        <li>4F</li>
+                        <li>5F</li>
+                        <li>6F</li>-->
+                    </ul>
+            
+                </li>
+                <li>
+                    <span class="iconfont">&#xe64f;</span>
+                    <a href="javascript:;" class="dong"> 三号楼</a>
+                    <ul class="floor">
+                     <!--   <li>1F</li>
+                        <li>2F</li>
+                        <li>3F</li>
+                        <li>4F</li>
+                        <li>5F</li>
+                        <li>6F</li>-->
+                    </ul>
+            
+                </li>
+                <li>
+                    <span class="iconfont">&#xe64f;</span>
+                    <a href="javascript:;" class="dong"> 四号楼</a>
+                    <ul class="floor">
+                     <!--   <li>1F</li>
+                        <li>2F</li>
+                        <li>3F</li>
+                        <li>4F</li>
+                        <li>5F</li>
+                        <li>6F</li>-->
+                    </ul>
+                </li>
+                <li>
+                    <span class="iconfont">&#xe64f;</span>
+                    <a href="javascript:;" class="dong"> 五号楼</a>
+                    <ul class="floor">
+                     <!--   <li>1F</li>
+                        <li>2F</li>
+                        <li>3F</li>
+                        <li>4F</li>
+                        <li>5F</li>
+                        <li>6F</li>-->
+                    </ul>
+                </li>
+                <li>
+                    <span class="iconfont">&#xe64f;</span>
+                    <a href="javascript:;" class="dong"> 六号楼</a>
+                    <ul class="floor">
+                     <!--   <li>1F</li>
+                        <li>2F</li>
+                        <li>3F</li>
+                        <li>4F</li>
+                        <li>5F</li>
+                        <li>6F</li>-->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="box">
+                <div class="smallBox">
+                    <div class="font">添加用户</div>
+                    <div id="threeBox">
+                        <div class="contentBox">
+                            <div >
+                                <span  >用户基本信息</span>
+                                <!--<span class="iconfont"><a href="">&#xe672;</a></span>-->
+                                <!--<span class="iconfont"><a href="">&#xe679;</a></span>-->
+                            </div>
+                            <table id="bigBox">
+                                <tr>
+                                    <td>
+                                        楼宇
+                                        <select name="louyu" id="louyu">
+                                            <option value="一号楼">一号楼</option>
+                                            <option value="二号楼">二号楼</option>
+                                            <option value="三号楼">三号楼</option>
+                                            <option value="四号楼">四号楼</option>
+                                            <option value="五号楼">五号楼</option>
+                                            <option value="六号楼">六号楼</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        客户编号
+                                        <input type="text" class="bianhao"/>
+                                    </td>
+                                    <td>
+                                        姓名
+                                        <input type="text" class="names"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        建筑面积
+                                        <input type="text" class="mianji"/>
+                                    </td>
+
+                                    <td>
+                                        联系电话
+                                        <input type="tel" class="tell"/>
+                                    </td>
+                                    <td>
+                                        楼层
+                                        <input type="tel" class="ceng"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        入住状态
+                                        <select name="zhuangtai" id="zhuangtai">
+                                            <option value="租客">租客</option>
+                                            <option value="业主">业主</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div id="anniu">
+                        <button>确定</button>
+                        <button>取消</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box1">
+                <div class="smallBox">
+                    <div class="font">修改信息</div>
+                    <div id="threeBox1">
+                        <div class="contentBox">
+                            <div >
+                                <span  >用户基本信息</span>
+                                <!--<span class="iconfont"><a href="">&#xe672;</a></span>-->
+                                <!--<span class="iconfont"><a href="">&#xe679;</a></span>-->
+                            </div>
+                            <table id="bigBox1">
+                                <tr>
+                                    <td>
+                                        楼宇
+                                        <select name="louyu" id="louyu1">
+                                            <option value="0"></option>
+                                            <option value="一号楼">一号楼</option>
+                                            <option value="二号楼">二号楼</option>
+                                            <option value="三号楼">三号楼</option>
+                                            <option value="四号楼">四号楼</option>
+                                            <option value="五号楼">五号楼</option>
+                                            <option value="六号楼">六号楼</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        客户编号
+                                        <input type="text" class="bianhao1"/>
+                                    </td>
+                                    <td>
+                                        姓名
+                                        <input type="text" class="names1"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        建筑面积
+                                        <input type="text" class="mianji1"/>
+                                    </td>
+
+                                    <td>
+                                        联系电话
+                                        <input type="tel" class="tell1"/>
+                                    </td>
+                                    <td>
+                                        楼层
+                                        <input type="tel" class="ceng1"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        入住状态
+                                        <select name="zhuangtai" id="zhuangtai1">
+                                            <option value="0"></option>
+                                            <option value="租客">租客</option>
+                                            <option value="业主">业主</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                    <div id="anniu1">
+                        <button>确定</button>
+                        <button>取消</button>
+                    </div>
+                </div>
+            </div>
+            <table id="headerOne">
+                <thead>
+                    <tr>
+                        <th>楼宇</th>
+                        <th>客户编号</th>
+                        <th>客户姓名</th>
+                        <th>楼层</th>
+                        <th>手机号码</th>
+                        <th>建筑面积</th>
+                        <th>入住状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="neirong">
+                    <!--<tr>-->
+                        <!--<td>一号楼</td>-->
+                        <!--<td>1-1-704</td>-->
+                        <!--<td>李丽丽</td>-->
+                        <!--<td>7</td>-->
+                        <!--<td>15888888888</td>-->
+                        <!--<td>123</td>-->
+                        <!--<td>租住</td>-->
+                        <!--<td></td>-->
+                        <!--<td></td>-->
+                        <!--<td><a href="javascript:;">修改</a> <a href="javascript:;">删除</a></td>-->
+                        <!--<td></td>-->
+                    <!--</tr>-->
+                </tbody>
+
+
+
+
+            </table>
+            <!-- <ul id="pageBox"></ul> -->
+            <nav aria-label="Page navigation" id="oPagination">
+                <ul class="pagination" id="pageBox">
+                 
+                </ul>
+              </nav>
+        </div>
+    </section>
+
+
+<script src='../js/02customerDataEntry.js'></script>
+
+</body>
+</html>
